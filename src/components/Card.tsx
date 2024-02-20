@@ -5,24 +5,23 @@ import tw from 'twrnc'
 import InputCpf from './InputMaskCpf';
 
 import { useState } from 'react';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-type CardScreenProps = {
-    navigation: NativeStackNavigationProp<{}>;
-};
+import { useNavigation } from '@react-navigation/native';
 
-
-export default function CardComp({ navigation }: CardScreenProps) {
+export default function CardComp() {
     const [cpf, setCpf] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('')
 
+    const navigation = useNavigation();
 
     const handleButtonClick = () => {
         const cleanedCpf = cpf.replace(/\D/g, '');
 
         if (!cleanedCpf || cleanedCpf.length !== 11) {
-            Alert.alert('Atenção', 'Por favor, preencha o campo com um CPF válido.');
+            setErrorMessage('Por favor, preencha o campo com um CPF válido.');
         } else {
             setCpf('');
+            setErrorMessage('')
             navigation.navigate('CardData');
         }
     };
@@ -44,6 +43,12 @@ export default function CardComp({ navigation }: CardScreenProps) {
 
 
             <InputCpf value={cpf} onChangeText={setCpf} />
+            <Text
+                variant="bodyMedium"
+                style={tw`text-red-500 top-1/6`}
+            >
+                {errorMessage}
+            </Text>
 
             <TouchableOpacity
                 onPress={handleButtonClick}
