@@ -3,20 +3,18 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-import { useIsFocused } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 
 import tw from 'twrnc';
 
-type LoginScreenProps = {
-    navigation: NativeStackNavigationProp<{}>;
-};
 
-export default function Login({ navigation }: LoginScreenProps) {
-    const [showPassword, setShowPassword] = useState(false);
+export default function Login() {
     const [name, setName] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] = useState<string>('')
+
+
 
     const isFocused = useIsFocused();
 
@@ -26,18 +24,22 @@ export default function Login({ navigation }: LoginScreenProps) {
         }
     }, [isFocused]);
 
-
+    const navigation = useNavigation();
 
     const handleButtonClick = () => {
         if (name === '' || password === '') {
-            alert("Preencha os campos antes de prosseguir.")
+            setErrorMessage("Preencha os campos antes de prosseguir.")
+            return
         } else {
             setName('');
             setPassword('');
+            setErrorMessage('')
             setShowPassword(true);
+
             navigation.navigate('Panel');
         }
     };
+
 
     return (
         <View style={tw`flex-1 items-center justify-center`}>
@@ -69,6 +71,7 @@ export default function Login({ navigation }: LoginScreenProps) {
                     }
                     style={tw`w-10/10`}
                 />
+                <Text style={tw`text-red-500 text-center mt-2`}>{errorMessage}</Text>
                 <TouchableOpacity onPress={handleButtonClick}>
                     <Text style={tw`text-center font-bold top-2/2 border p-2 bg-gray-700 text-white rounded`}>Acessar painel</Text>
                 </TouchableOpacity>
