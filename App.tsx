@@ -8,6 +8,9 @@ import CardData from './src/components/CardData';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Login from './src/screens/Login';
 import Panel from './src/screens/Panel';
+import UserScreen from './src/screens/UserScreen';
+import EmplooyeScreen from './src/screens/EmplooyeScreen';
+import CardUsers from './src/components/CardUsers';
 
 export default function App() {
 
@@ -45,6 +48,8 @@ export default function App() {
         <Stack.Screen name="Tabs" component={TabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CardData" component={CardData} options={{ headerShown: false }} />
         <Stack.Screen name="Panel" component={Panel} options={{ headerShown: false }} />
+        <Stack.Screen name="UserScreen" component={UserScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="EmplooyeScreen" component={EmplooyeScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
