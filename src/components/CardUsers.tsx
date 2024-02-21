@@ -1,18 +1,17 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
 import { useNavigation } from '@react-navigation/native';
 
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import tw from 'twrnc';
+import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
 
 
 
 export default function CardUsers() {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<AuthNavigationRoutesProp>();
 
     const handleCardClick = () => {
         navigation.navigate('UserScreen');

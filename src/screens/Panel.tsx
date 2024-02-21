@@ -14,6 +14,7 @@ export default function Panel() {
 
     const handleLogout = () => {
         navigation.navigate('Login')
+
     }
 
     return (

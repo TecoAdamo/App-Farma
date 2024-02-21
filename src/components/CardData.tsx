@@ -1,15 +1,15 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { TouchableOpacity, View, Text } from 'react-native';
 
 import tw from 'twrnc'
 import EmployeeStatus from './EmplooyeStatus';
 
-type CardDataScreenProps = {
-    navigation: NativeStackNavigationProp<{}>;
-};
+import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
+import { useNavigation } from '@react-navigation/native';
 
 
-export default function CardData({ navigation }: CardDataScreenProps) {
+export default function CardData() {
+    const navigation = useNavigation<AuthNavigationRoutesProp>();
+
     const handleButtonClick = () => {
 
         navigation.navigate('Home');

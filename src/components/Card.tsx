@@ -7,12 +7,13 @@ import InputCpf from './InputMaskCpf';
 import { useState } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
+import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
 
 export default function CardComp() {
     const [cpf, setCpf] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string>('')
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<AuthNavigationRoutesProp>();
 
     const handleButtonClick = () => {
         const cleanedCpf = cpf.replace(/\D/g, '');

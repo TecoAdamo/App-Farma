@@ -4,11 +4,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import tw from 'twrnc';
 
 import { useNavigation } from '@react-navigation/native';
+import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
 
 
 export default function CardEmplooyes() {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<AuthNavigationRoutesProp>();
 
     const handleCardClick = () => {
         navigation.navigate('EmplooyeScreen');

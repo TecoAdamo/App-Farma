@@ -7,13 +7,14 @@ import { useIsFocused, useNavigation } from '@react-navigation/native';
 
 import tw from 'twrnc';
 
+import { AuthNavigationRoutesProp } from './../routes/AuthRoutes';
+
 
 export default function Login() {
     const [name, setName] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string>('')
-
 
 
     const isFocused = useIsFocused();
@@ -24,7 +25,7 @@ export default function Login() {
         }
     }, [isFocused]);
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<AuthNavigationRoutesProp>();
 
     const handleButtonClick = () => {
         if (name === '' || password === '') {
