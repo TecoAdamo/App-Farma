@@ -7,14 +7,17 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import tw from 'twrnc';
 import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
 
+interface Props {
+    name: string
 
+}
 
-export default function CardUsers() {
+export default function CardUsers({ name }: Props): React.JSX.Element {
 
     const navigation = useNavigation<AuthNavigationRoutesProp>();
 
     const handleCardClick = () => {
-        navigation.navigate('UserScreen');
+        navigation.navigate('UserScreen', { name: name });
     };
 
     return (
