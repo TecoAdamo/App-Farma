@@ -22,9 +22,9 @@ export default function CardData() {
                 <View style={tw`w-full`}>
                     <Text style={tw`font-extrabold text-gray-700 text-xl mb-6`}>Funcionário</Text>
                     <Text style={tw`font-bold mb-2`}>Nome: Mateus Adamo Lamin</Text>
-                    <Text style={tw`font-bold mb-2`}>CPF: 127.245.739-78</Text>
+                    <Text style={tw`font-bold mb-2`}>CPF: 123.456.789-10</Text>
 
-                    <EmployeeStatus />
+                    <EmployeeStatus isActive={true} />
 
                 </View>
                 <View style={tw`rounded p-2 w-full mt-2 border border-gray-600 bg-gray-700`}>
