@@ -15,13 +15,15 @@ import EmplooyeScreen from '../screens/EmplooyeScreen'
 
 type AuthRoutes = {
     Card: undefined
+    CardData: undefined
     Home: undefined
     Login: undefined
-    Panel: undefined
+    Panel: { name: string }
     CardUsers: undefined
     CardEmplooyes: undefined
-    UserScreen: undefined
-    EmplooyeScreen: undefined
+    UserScreen: { name: string }
+    EmplooyeScreen: { name: string }
+
 }
 
 export type AuthNavigationRoutesProp = NativeStackNavigationProp<AuthRoutes>
@@ -32,6 +34,7 @@ export function AuthRoutes() {
     return (
         <Navigator screenOptions={{ headerShown: false }}>
             <Screen name="Card" component={CardComp} />
+            <Screen name="Card" component={CardData} />
             <Screen name="Login" component={Login} />
             <Screen name="Panel" component={Panel} />
             <Screen name="CardUsers" component={CardUsers} />
