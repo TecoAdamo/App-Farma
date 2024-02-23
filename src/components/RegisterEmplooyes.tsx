@@ -11,7 +11,7 @@ export default function RegisterEmplooye() {
                 <TouchableOpacity
                     style={tw`flex-row items-center bg-gray-900 p-2 rounded gap-4`}>
                     <Ionicons name="person-add-outline" size={32} color="white" />
-                    <Text style={tw`font-bold right-1/8 text-white`}>Cadastrar Usuários</Text>
+                    <Text style={tw`font-bold right-1/8 text-white`}>Cadastrar Funcionários</Text>
                 </TouchableOpacity>
             </View>
         </View>
