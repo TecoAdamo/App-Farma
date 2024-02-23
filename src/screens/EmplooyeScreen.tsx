@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
 import tw from 'twrnc';
+import RegisterEmplooye from '../components/RegisterEmplooyes';
+import Header from '../components/Header';
 
 
-export default function EmplooyeScreen() {
-
+export default function EmplooyeScreen({ route }: any) {
+    const { name } = route.params;
 
 
     return (
-        <View style={tw`flex-1 items-center top-1/8`}>
-            <Text style={tw`font-bold mb-2 `}>Tela de Funcionários</Text>
+        <View style={tw`flex-1 items-center`}>
+            <Header name={name} />
+            <RegisterEmplooye />
         </View>
     );
 }

@@ -2,11 +2,16 @@ import { View, Text } from 'react-native';
 
 import tw from 'twrnc';
 
-export default function UserScreen() {
+import Header from '../components/Header';
+import RegisterUser from '../components/RegisterUserBtn';
+
+export default function UserScreen({ route }: any) {
+    const { name } = route.params;
 
     return (
-        <View style={tw`flex-1 items-center top-1/8`}>
-            <Text style={tw`font-bold mb-2 `}>Tela de Usuários</Text>
+        <View style={tw`flex-1 items-center `}>
+            <Header name={name} />
+            <RegisterUser />
         </View>
     );
 }
