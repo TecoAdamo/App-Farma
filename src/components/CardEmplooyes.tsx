@@ -21,7 +21,7 @@ export default function CardEmplooyes({ name }: Props) {
     return (
         <View style={tw`items-center top-1/8`}>
             <View style={tw`bottom-1/4 p-1 w-full rounded gap-4`}>
-                <TouchableOpacity style={tw`flex-row items-center border border-gray-500 p-2 rounded gap-8`} onPress={handleCardClick}>
+                <TouchableOpacity style={tw`flex-row items-center border border-gray-500 p-3 rounded gap-8`} onPress={handleCardClick}>
                     <Ionicons name="people-outline" size={28} color="#111827" />
                     <Text style={tw`font-bold right-1/8`}>Tela de Funcionários</Text>
                 </TouchableOpacity>
