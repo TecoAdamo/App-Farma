@@ -11,7 +11,7 @@ import { AuthNavigationRoutesProp } from './../routes/AuthRoutes';
 
 
 export default function Login() {
-    const [name, setName] = useState<string>('')
+    const [name, setName] = useState('')
     const [password, setPassword] = useState<string>('')
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string>('')
@@ -37,7 +37,7 @@ export default function Login() {
             setErrorMessage('')
             setShowPassword(true);
 
-            navigation.navigate('Panel');
+            navigation.navigate("Panel", { name: name });
         }
     };
 
