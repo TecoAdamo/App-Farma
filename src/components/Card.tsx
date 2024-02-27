@@ -43,7 +43,11 @@ export default function CardComp() {
             </Text>
 
 
-            <InputCpf value={cpf} onChangeText={setCpf} />
+            <InputCpf
+                value={cpf}
+                onChangeText={setCpf}
+                style={tw`border p-2 top-1/8 rounded w-full`}
+            />
             <Text
                 variant="bodyMedium"
                 style={tw`text-red-500 top-1/6`}

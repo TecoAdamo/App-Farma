@@ -8,9 +8,7 @@ import { AuthNavigationRoutesProp } from '../routes/AuthRoutes';
 
 interface Props {
     name: string
-
 }
-
 export default function CardEmplooyes({ name }: Props) {
 
     const navigation = useNavigation<AuthNavigationRoutesProp>();
