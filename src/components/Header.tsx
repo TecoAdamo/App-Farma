@@ -26,7 +26,7 @@ export default function Header({ name, children }: Props) {
             <TouchableOpacity onPress={handleLogout}>
                 <Ionicons name="log-out-outline" size={32} color="#111827" style={tw`left-2/5 bottom-4/2`} />
             </TouchableOpacity>
-            <Text style={tw`font-bold text-xl right-2/8`}>Menu</Text>
+            <Text style={tw`font-bold text-xl right-2/6`}>Menu</Text>
             {children}
         </View>
     );
